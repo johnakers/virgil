@@ -9,6 +9,9 @@ class Interpreter
 
     def examine(data)
 
+      # log messages
+      puts "#{data}"
+
       if data['type'] == 'message' && data['text']
         Interpreter.text(data)
       end
@@ -42,7 +45,7 @@ class Interpreter
           Virgil.speak(channel, "I don't know who that is #{name}... yet")
         when 'forecast'
           location = text[1..-1].join(' ')
-          Virgil.speak(channel, "#{name}, #{Forecast.state_weather(location)}")
+          Virgil.speak(channel, "#{name}, #{Forecast.get(location)}")
         when 'guide'
           # TODO (places near...)
           Virgil.speak(channel, "#{name}, perhaps this will lead to something...")
