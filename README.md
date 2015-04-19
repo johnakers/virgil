@@ -7,7 +7,7 @@
 Named after the [Roman poet](http://en.wikipedia.org/wiki/Virgil)... Virgil is a Slack bot, created in Ruby, that you can incorporate into your Slack.
 
 ######<a href='#structure'>Structure</a>
-######<a href='#getting-started'>Getting Started</a>
+######<a href='#started'>Getting Started</a>
 ######<a href='#forecast'>ForecastIO</a>
 ######<a href='#contributing'>Adding on / contributing</a>
 
@@ -48,7 +48,7 @@ Under `lib` in the `modules` folder is where things are broken out (e.g. `foreca
 
 See *Adding on / contributing* for ore on this.
 
-**<a name='getting-started'>Getting Started</a>**
+**<a name='started'>Getting Started</a>**
 
 For now, to get Virgil up and running locally, you're going to need a few things.
 
