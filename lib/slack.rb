@@ -26,6 +26,15 @@ class Slack
       HTTParty.post("https://slack.com/api/channels.list?token=#{Slack.token}")
     end
 
+    def find_general
+      response = self.channel_list
+      parsed = response.parsed_response
+      channels = parsed['channels']
+      general = ''
+      channels.each { |chan| general = chan['id'] if chan['is_general'] }
+      general
+    end
+
     def rtm
       HTTParty.post("https://slack.com/api/rtm.start?token=#{Slack.token}") 
     end
@@ -38,5 +47,3 @@ class Slack
 
   end # self
 end
-
-# p Slack.find_user_name("U0317Q2GS")
