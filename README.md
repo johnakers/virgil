@@ -7,9 +7,9 @@
 Named after the [Roman poet](http://en.wikipedia.org/wiki/Virgil)... Virgil is a Slack bot, created in Ruby, that you can incorporate into your Slack.
 
 ######<a href='#structure'>Structure</a>
-######<a href=''>Getting Started</a>
-######<a href=''>ForecastIO</a>
-######<a href=''>Adding on / contributing</a>
+######<a href='#getting-started'>Getting Started</a>
+######<a href='#forecast'>ForecastIO</a>
+######<a href='#contributing'>Adding on / contributing</a>
 
 <hr>
 
@@ -48,7 +48,7 @@ Under `lib` in the `modules` folder is where things are broken out (e.g. `foreca
 
 See *Adding on / contributing* for ore on this.
 
-**Getting Started**
+**<a name='getting-started'>Getting Started</a>**
 
 For now, to get Virgil up and running locally, you're going to need a few things.
 
@@ -71,7 +71,7 @@ SLACK_TOKEN="xxxx-0123456789-someOTHERnumbers&letters"
 * `virgil help` will give a list of things he can do
 <img src='http://i.imgur.com/fIZq00v.png' />
 
-**ForecastIO**
+**<a name='forecast'>ForecastIO</a>**
 
 To get Virgil's `virgil forecast [city]` working... you'll need a [ForecastIO](http://forecast.io/) key. To get one, head over to [their API](https://developer.forecast.io/) and sign up, which will give you a key. It looks something like `380xxxxxa3xxxxx17xxxxxcb9`.
 
@@ -82,7 +82,7 @@ FORECAST_TOKEN="380xxxxxa3xxxxx17xxxxxcb9"
 
 And you should be good to go.
 
-**Adding on / contributing**
+**<a name='contributing'>Adding on / contributing</a>**
 
 Hypothetically, you have Virgil up and running on your own. Now, you're wondering how to add on to him or, make him something else to work on your own.
 
