@@ -66,7 +66,7 @@ For now, to get Virgil up and running locally, you're going to need a few things
 SLACK_TOKEN="xxxx-0123456789-someOTHERnumbers&letters"
 ```
 * You should be able to then run `ruby app.rb` and a [Thin server](http://code.macournoyer.com/thin/) will start.
-* Head over to `http://localhost:4567/` and you'll notice your terminal will start displaying the messages as they occur. Virgil should say that he's awake in whatever channel as listed as your `is_general` channel. If you do not have one, he may not work (never tested it). You can change this by [going into his code](https://github.com/johnakers/virgil/blob/master/lib/virgil.rb#L21-L31) and altering his `awake` and `sleep` messages, hide them, or alter the channel ids.
+* Head over to `http://localhost:4567/` and you'll notice your terminal will start displaying the messages as they occur. Virgil should say that he's awake in whatever channel as listed as your `is_general` channel. If you do not have one, he may not work (never tested it). You can change this by [going into his code](https://github.com/johnakers/virgil/blob/master/lib/virgil.rb#L21-L32) and altering his `awake` and `sleep` messages, hide them, or alter the channel ids.
 * in your `#general` channel, type `virgil` and he should respond
 * `virgil help` will give a list of things he can do
 <img src='http://i.imgur.com/fIZq00v.png' />
