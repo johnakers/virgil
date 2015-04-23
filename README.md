@@ -1,6 +1,6 @@
 # virgil
 
-![virgil](http://www.crystalinks.com/virgil.jpg)
+![virgil](http://i.imgur.com/Nw9BRQg.png)
 
 *This is a work in progress. It was created with the help of [maxdeviant](https://github.com/maxdeviant?tab=repositories) and the work on [Nouvion](https://github.com/merveilles/nouvion), a Slack bot for Merveilles.*
 
