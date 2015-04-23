@@ -1,5 +1,7 @@
 # virgil
 
+![virgil](http://www.crystalinks.com/virgil.jpg)
+
 *This is a work in progress. It was created with the help of [maxdeviant](https://github.com/maxdeviant?tab=repositories) and the work on [Nouvion](https://github.com/merveilles/nouvion), a Slack bot for Merveilles.*
 
 *This README is written up as of April 19, 2015... it will most likely change.*
