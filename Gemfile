@@ -6,10 +6,11 @@ group :development, :test do
   gem 'webmock'
 end
 
-gem 'httparty'
-gem 'dotenv'
 gem 'sinatra'
 gem 'thin'
 gem 'faye-websocket'
+gem 'dotenv'
+gem 'httparty'
 gem 'json'
 gem 'geocoder'
+gem 'dentaku'

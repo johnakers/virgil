@@ -2,6 +2,7 @@ module Pathfind
 
   # input is an array of words... need address 1 & 2
   def self.determine_input(array)
+    array = array.split(' ')
     split_point = array.index('from')
     [ array[1..split_point-1].join(' '), array[split_point+1..-1].join(' ') ]
   end
