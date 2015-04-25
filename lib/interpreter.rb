@@ -1,6 +1,6 @@
 # files
 require_relative 'virgil'
-require_relative './modules/reference'
+require_relative './modules/module.reference'
 
 # response for determining which type
 # of message was input to Virgil
