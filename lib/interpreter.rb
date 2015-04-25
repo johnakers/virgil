@@ -7,29 +7,36 @@ require_relative './modules/module.reference'
 class Interpreter
   class << self
 
+    # examines the messages
     def examine(data)
 
-      # log messages
-      puts "#{data}"
+      # log messages to terminal
+      puts "#{data}\n\n"
 
+      # if messages are what we're looking for, interpret and reply
       if data['type'] == 'message' && data['text']
         Interpreter.text(data)
       end
 
-    end # examine
+    end
 
+    # how to reply
     def text(data)
+
+      # variables needed
       text = data['text'].downcase.split(' ')
       name = "<@#{Slack.find_user_name(data['user'])}>"
       channel = data['channel']
 
+      # 'virgil [command] [params]'
       if Interpreter.virgil_message?(text)
+        # we know first word is 'virgil', grab the rest after 'command' word
         text.shift
-        input = text[1..-1].join(' ')
+        text.first.nil? ? input = nil : input = text[1..-1].join(' ')
 
-        # none of these should be more than 3 lines
+        # modules
         case text.first
-        when nil && input.nil?
+        when nil
           Virgil.speak(channel, "Yes #{name}?")
         when 'help'
           Virgil.speak(channel, "You need help #{name}? I can help you with:\n\n `echo [words]`, `recite` my works, `forecast [city]` weather, `pathfind` `[to_address, from_address]`, `calculate [math formula]`. Please prefix `vrigil before everything else so I know you're addressing me.`")
@@ -60,7 +67,7 @@ class Interpreter
 
     def virgil_message?(array)
       array.first.eql?('virgil')
-    end
+    end # virgil_message?
 
   end # self
 end
