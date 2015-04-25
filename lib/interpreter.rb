@@ -30,6 +30,7 @@ class Interpreter
 
       # 'virgil [command] [params]'
       if Interpreter.virgil_message?(text)
+
         # we know first word is 'virgil', grab the rest after 'command' word
         text.shift
         text.first.nil? ? input = nil : input = text[1..-1].join(' ')
@@ -39,7 +40,10 @@ class Interpreter
         when nil
           Virgil.speak(channel, "Yes #{name}?")
         when 'help'
-          Virgil.speak(channel, "You need help #{name}? I can help you with:\n\n `echo [words]`, `recite` my works, `forecast [city]` weather, `pathfind` `[to_address, from_address]`, `calculate [math formula]`. Please prefix `vrigil before everything else so I know you're addressing me.`")
+          Virgil.speak(channel, "#{name}, #{Help.info(input)}")
+        when 'self'
+          # TODO
+          Virgil.speak(channel "Coming soon!")
         when 'hello'
           Virgil.speak(channel, "Hello #{name}")
         when 'echo'
@@ -53,11 +57,11 @@ class Interpreter
         when 'forecast'
           Virgil.speak(channel, "#{name}, #{Forecast.get(input)}")
         when 'pathfind'
-          addresses, locations = Pathfind.determine_input(input), Pathfind.get_locations(addresses)
+          addresses = Pathfind.determine_input(input)
+          locations = Pathfind.get_locations(addresses)
           Virgil.speak(channel, "#{name}, here is your path: `#{Pathfind.direction_path(locations)}`")
         when 'calculate'
-          answer = Calc.ulate(input)
-          Virgil.speak(channel, "#{name}, your answer is: *#{answer}*")
+          Virgil.speak(channel, "#{name}, your answer is: *#{Calc.ulate(input)}*")
         else
           Virgil.speak(channel, "I'm sorry #{name}, I'm afraid I didn't understand `#{text.first}`")
         end # case

@@ -11,9 +11,9 @@ module Forecast
   # 'location' is a string (e.g. "San Francisco")
   def self.get_weather(location)
     coordinates = Geocoder.coordinates(location)
-    return nil if Forecast.location_invalid?(coordinates)
+    return nil if self.location_invalid?(coordinates)
     lat, long, unknown  = coordinates[0], coordinates[1], "... I'm afraid I don't know"
-    HTTParty.get("https://api.forecast.io/forecast/#{Forecast.key}/#{lat},#{long}")
+    HTTParty.get("https://api.forecast.io/forecast/#{self.key}/#{lat},#{long}")
   end
 
   def self.parse_weather(response)
@@ -24,9 +24,9 @@ module Forecast
   end
 
   def self.get(location)
-    response = Forecast.get_weather(location)
+    response = self.get_weather(location)
     return "I do not know that location" if response.nil?        
-    results  = Forecast.parse_weather(response)
+    results  = self.parse_weather(response)
     "currently the weather is #{results[:currently]}. It will be #{results[:hourly]} and #{results[:daily]}"
   end
 
