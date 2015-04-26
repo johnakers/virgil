@@ -10,5 +10,5 @@ require_relative './lib/virgil.rb'
 # controller
 get '/' do
   Virgil.exist
-  erb :index
+  status 200
 end
