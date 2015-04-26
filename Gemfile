@@ -3,7 +3,8 @@ source "https://rubygems.org"
 group :development, :test do
   gem 'rake'
   gem 'rspec'
-  gem 'webmock'
+  # gem 'webmock'
+  gem 'awesome_print'
 end
 
 gem 'sinatra'

@@ -1,3 +1,6 @@
+# gem
+require 'awesome_print'
+
 # files
 require_relative 'virgil'
 require_relative './modules/module.reference'
@@ -11,7 +14,7 @@ class Interpreter
     def examine(data)
 
       # log messages to terminal
-      p data
+      ap data
 
       # if messages are what we're looking for, interpret and reply
       if data['type'] == 'message' && data['text']
@@ -52,9 +55,7 @@ class Interpreter
           # TODO (NEED QUOTES)
           Virgil.speak(channel, "Fortune favors the bold... that is all I know, for now #{name}")
         when 'whois'
-          # TODO
-          # Virgil.speak(channel, "#{Whois.info(input)}")
-          Virgil.speak(channel, "I don't know anybody... yet")
+          Virgil.speak(channel, "About #{name}: #{Whois.info(input)}")
         when 'forecast'
           Virgil.speak(channel, "#{name}, #{Forecast.get(input)}")
         when 'pathfind'

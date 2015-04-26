@@ -45,5 +45,10 @@ class Slack
       resp.parsed_response['user']['name']
     end
 
+    def users_list
+      resp = HTTParty.post("https://slack.com/api/users.list?token=#{self.token}")
+      resp.parsed_response['members']
+    end
+
   end # self
 end

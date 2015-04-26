@@ -1,9 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.8)
-    crack (0.4.2)
-      safe_yaml (~> 1.0.0)
+    awesome_print (1.6.1)
     daemons (1.2.2)
     dentaku (1.2.4)
     diff-lcs (1.2.5)
@@ -35,7 +33,6 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
-    safe_yaml (1.0.4)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -45,9 +42,6 @@ GEM
       eventmachine (~> 1.0)
       rack (~> 1.0)
     tilt (2.0.1)
-    webmock (1.21.0)
-      addressable (>= 2.3.6)
-      crack (>= 0.3.2)
     websocket-driver (0.5.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -56,6 +50,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   dentaku
   dotenv
   faye-websocket
@@ -66,4 +61,3 @@ DEPENDENCIES
   rspec
   sinatra
   thin
-  webmock
