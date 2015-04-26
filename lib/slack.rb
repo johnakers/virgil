@@ -15,15 +15,15 @@ class Slack
     end
     
     def test
-      HTTParty.post("https://slack.com/api/auth.test?token=#{Slack.token}")
+      HTTParty.post("https://slack.com/api/auth.test?token=#{self.token}")
     end
 
     def message(channel, text)
-      HTTParty.post("https://slack.com/api/chat.postMessage?token=#{Slack.token}&channel=#{channel}&text=#{text}&username=virgil&as_user=true")
+      HTTParty.post("https://slack.com/api/chat.postMessage?token=#{self.token}&channel=#{channel}&text=#{text}&username=virgil&as_user=true")
     end
 
     def channel_list
-      HTTParty.post("https://slack.com/api/channels.list?token=#{Slack.token}")
+      HTTParty.post("https://slack.com/api/channels.list?token=#{self.token}")
     end
 
     def find_general
@@ -36,11 +36,11 @@ class Slack
     end
 
     def rtm
-      HTTParty.post("https://slack.com/api/rtm.start?token=#{Slack.token}") 
+      HTTParty.post("https://slack.com/api/rtm.start?token=#{self.token}") 
     end
 
     def find_user_name(id)
-      resp = HTTParty.post("https://slack.com/api/users.info?token=#{Slack.token}&user=#{id}")
+      resp = HTTParty.post("https://slack.com/api/users.info?token=#{self.token}&user=#{id}")
       return 'Philistine' if resp.nil?
       resp.parsed_response['user']['name']
     end
