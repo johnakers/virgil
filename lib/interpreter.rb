@@ -11,7 +11,7 @@ class Interpreter
     def examine(data)
 
       # log messages to terminal
-      puts "#{data}\n\n"
+      puts "#{data}"
 
       # if messages are what we're looking for, interpret and reply
       if data['type'] == 'message' && data['text']
@@ -42,8 +42,7 @@ class Interpreter
         when 'help'
           Virgil.speak(channel, "#{name}, #{Help.info(input)}")
         when 'self'
-          # TODO
-          Virgil.speak(channel "Coming soon!")
+          Virgil.speak(channel, "#{name}, #{Self.return_info}")
         when 'hello'
           Virgil.speak(channel, "Hello #{name}")
         when 'echo'

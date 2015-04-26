@@ -27,6 +27,10 @@ class Help
 
   # ---  descriptions of modules ---
 
+  def self.self
+    "`self` will give you information about myself. ```Example: *virgil self*```"
+  end
+
   def self.echo
     "`echo` does simply that, echoes words back. ```Example: *virgil echo hello world* would make me say 'hello world'```"
   end
