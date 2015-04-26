@@ -11,7 +11,7 @@ class Interpreter
     def examine(data)
 
       # log messages to terminal
-      puts "#{data}"
+      p data
 
       # if messages are what we're looking for, interpret and reply
       if data['type'] == 'message' && data['text']
@@ -25,7 +25,8 @@ class Interpreter
 
       # variables needed
       text = data['text'].downcase.split(' ')
-      name = "<@#{Slack.find_user_name(data['user'])}>"
+      user = data['user']
+      name = "<@#{Slack.find_user_name(user)}>"
       channel = data['channel']
 
       # 'virgil [command] [params]'
