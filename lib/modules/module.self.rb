@@ -2,7 +2,7 @@ module Self
 
   def self.request_info
     response = HTTParty.get('https://api.github.com/repos/johnakers/virgil/stats/contributors')
-    response.parsed_response.first
+    p response.parsed_response.first
   end
 
   def self.parse_info
