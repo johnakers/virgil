@@ -14,7 +14,7 @@ module Self
   end
 
   def self.commits
-    self.parse_info['total']
+    self.request_info['total']
   end
 
   def self.additions_deletions
