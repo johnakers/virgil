@@ -2,7 +2,9 @@ module Whois
 
   # input is name of user
   def self.info(name)
-    if self.valid_name?(name)
+    if name == 'virgil'
+      "I am <@virgil>. I can tell you about me if you ask me with `virgil self`"
+    elsif self.valid_name?(name)
       this_user = self.user_find(name)
       self.message(this_user)
     else
@@ -27,14 +29,14 @@ module Whois
     real  = user['real_name']
     loc   = user['tz_label']
     email = user['profile']['email']
-    title = user['profile']['title']
+    title = user['profile']['title'] || "_nothing_"
     user['is_admin'] ? admin = "are an admin" : admin = "are not an admin"
     user['is_owner'] ? owner = "are an owner" : owner = "are not an owner"
     
     if user['is_bot'] == true
       message = "They are a fellow guide of some sort, though I do not know them well."
     else
-      message = "Their real name is #{real}, their email is #{email}. According to my records, they are located in the #{loc} timezone. They hold the title of #{title}, #{admin} and #{owner}."
+      message = "Their real name is #{real} and their email is #{email}. According to my records, they are located in the #{loc} timezone. They hold the title of #{title}, #{admin} and #{owner}."
     end
     message
   end

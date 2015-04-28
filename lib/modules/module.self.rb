@@ -1,12 +1,8 @@
 module Self
 
   def self.request_info
-    response = HTTParty.get('https://api.github.com/repos/johnakers/virgil/stats/contributors')
-    p response.parsed_response.first
-  end
-
-  def self.parse_info
-    self.request_info    
+    ap response = HTTParty.get('https://api.github.com/repos/johnakers/virgil/stats/contributors')
+    response.parsed_response.first
   end
 
   def self.weeks
@@ -28,7 +24,7 @@ module Self
   end
 
   def self.return_info
-    "I am a Slack bot written in the *Ruby* programming language. I was created by John Akers. To date, I have #{self.commits} commits, with #{self.additions_deletions}. You can find my source code at `https://github.com/johnakers/virgil`"
+    "I am a Slack bot written in the *Ruby* programming language, named after the Roman poet. I was created by John Akers. To date, I have #{self.commits} commits, with #{self.additions_deletions}. You can find my source code at `https://github.com/johnakers/virgil`"
   end
 
 end

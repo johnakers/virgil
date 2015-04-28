@@ -55,7 +55,7 @@ class Interpreter
           # TODO (NEED QUOTES)
           Virgil.speak(channel, "Fortune favors the bold... that is all I know, for now #{name}")
         when 'whois'
-          Virgil.speak(channel, "About #{name}: #{Whois.info(input)}")
+          Virgil.speak(channel, "#{name}, #{Whois.info(input)}")
         when 'forecast'
           Virgil.speak(channel, "#{name}, #{Forecast.get(input)}")
         when 'pathfind'

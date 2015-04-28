@@ -19,7 +19,7 @@ class Virgil
         general = Slack.find_general
 
         socket.on :open do |event|
-          Virgil.speak(general, "I'm awake. Entering `virgil help` is a good place to start.")
+          Virgil.speak(general, "I'm awake. Entering Need something? Type `virgil help`")
         end
 
         socket.on :message do |event|
