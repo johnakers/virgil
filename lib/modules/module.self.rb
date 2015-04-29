@@ -32,7 +32,7 @@ module Self
   end
 
   def self.invalid_input
-    "Something odd occurred, can you please try again in a little bit?"
+    "something odd occurred, can you please try again in a little bit?"
   end
 
 end
