@@ -12,7 +12,7 @@ module Forecast
   def self.get_weather(location)
     coordinates = Geocoder.coordinates(location)
     return nil if self.location_invalid?(coordinates)
-    lat, long, unknown  = coordinates[0], coordinates[1], "... I'm afraid I don't know"
+    lat, long = coordinates[0], coordinates[1]
     HTTParty.get("https://api.forecast.io/forecast/#{self.key}/#{lat},#{long}")
   end
 

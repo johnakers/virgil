@@ -24,7 +24,11 @@ module Self
   end
 
   def self.return_info
-    "I am a Slack bot written in the *Ruby* programming language, named after the Roman poet. I was created by John Akers. To date, I have #{self.commits} commits, with #{self.additions_deletions}. You can find my source code at `https://github.com/johnakers/virgil`"
+    if self.commits.nil? || self.weeks.nil? || self.additions_deletions.nil?
+      "Something odd occurred, can you please try again in a little bit?"
+    else
+      "I am a Slack bot written in the *Ruby* programming language, named after the Roman poet. I was created by John Akers. To date, I have #{self.commits} commits, with #{self.additions_deletions}. You can find my source code at `https://github.com/johnakers/virgil`"
+    end
   end
 
 end

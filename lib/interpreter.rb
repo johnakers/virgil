@@ -59,9 +59,7 @@ class Interpreter
         when 'forecast'
           Virgil.speak(channel, "#{name}, #{Forecast.get(input)}")
         when 'pathfind'
-          addresses = Pathfind.determine_input(input)
-          locations = Pathfind.get_locations(addresses)
-          Virgil.speak(channel, "#{name}, here is your path: `#{Pathfind.direction_path(locations)}`")
+          Virgil.speak(channel, "#{name}, #{Pathfind.direction_path(input)}")
         when 'calculate'
           Virgil.speak(channel, "#{name}, your answer is: *#{Calc.ulate(input)}*")
         else
