@@ -1,8 +1,8 @@
 module Self
 
   def self.request_info
-    ap response = HTTParty.get('https://api.github.com/repos/johnakers/virgil/stats/contributors')
-    response.parsed_response.first
+    response = HTTParty.get('https://api.github.com/repos/johnakers/virgil/stats/contributors')
+    response.parsed_response.first || self.invalid_input
   end
 
   def self.weeks
@@ -25,10 +25,14 @@ module Self
 
   def self.return_info
     if self.commits.nil? || self.weeks.nil? || self.additions_deletions.nil?
-      "Something odd occurred, can you please try again in a little bit?"
+      self.invalid_input
     else
-      "I am a Slack bot written in the *Ruby* programming language, named after the Roman poet. I was created by John Akers. To date, I have #{self.commits} commits, with #{self.additions_deletions}. You can find my source code at `https://github.com/johnakers/virgil`"
+      "I am a Slack bot written in the _Ruby_ programming language, named after the Roman poet. I was created by John Akers. To date, I have #{self.commits} commits, with #{self.additions_deletions}. You can find my source code at `https://github.com/johnakers/virgil`"
     end
+  end
+
+  def self.invalid_input
+    "Something odd occurred, can you please try again in a little bit?"
   end
 
 end
