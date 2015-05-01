@@ -52,8 +52,7 @@ class Interpreter
         when 'echo'
           Virgil.speak(channel, input)
         when 'recite'
-          # TODO (NEED QUOTES)
-          Virgil.speak(channel, "Fortune favors the bold... that is all I know, for now #{name}")
+          Virgil.speak(channel, "#{Recite.get}")
         when 'whois'
           Virgil.speak(channel, "#{name}, #{Whois.info(input)}")
         when 'forecast'
