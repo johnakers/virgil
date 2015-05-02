@@ -52,6 +52,8 @@ Named after the [Roman poet](http://en.wikipedia.org/wiki/Virgil)... Virgil is a
 
 Virgil is actually pretty simple. He runs out of `app.rb` at the root level. `interpreter.rb` is effectively your controller. It parses the message and acts accordingly, telling Virgil how to respond. `slack.rb` is what is doing the leg work in connecting to Slack's API.
 
+When you boot the app up and get your server going, virgil is effectively listening and able to connect to [Slack's RTM API](https://api.slack.com/rtm) via a [Faye websocket](https://github.com/faye/faye-websocket-ruby).
+
 Under `lib` in the `modules` folder is where things are broken out (e.g. `module.forecast.rb` is relevant to forecasting weather, `module.calc.rb` pertains to mathematical calculations and so on).
 
 See *Adding on / contributing* for more on this.
