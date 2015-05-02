@@ -26,7 +26,17 @@ module Recite
       "_The goddess indubitable was revealed in her step_",
       "_Love conquers all_",
       "_Do not yield to misfortunes, but advance more boldly to meeet them as your fortune permits you_",
-      "_Fortunate is he whose mind has the power to probe the causes of things and trample underfoot all terrors and inexorable fate_"
+      "_Fortunate is he whose mind has the power to probe the causes of things and trample underfoot all terrors and inexorable fate_",
+      "_Death's brother, sleep_",
+      "_I fear the Greeks even when they bring gifts_",
+      "_Spare the meek, but subdue the arrogant_",
+      "_They are able who think they are able_",
+      "_Time is flying never to return_",
+      "_No straner to misfortune myself, I have learned to relieve the sufferings of others_",
+      "_the dewy night unrolls a heaven thickly jewelled with sparkling stars_",
+      "_The best days are the first to flee_",
+      "_Yield not to evils, but attack all the more boldly_",
+      "_Ah, merciless Love, is there any length to which you cannot foree the human heart to go?_",
     ]
   end
 
