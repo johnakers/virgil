@@ -2,11 +2,13 @@
 
 ![virgil](http://i.imgur.com/Nw9BRQg.png)
 
-*This is a work in progress. It was created with the help of [maxdeviant](https://github.com/maxdeviant?tab=repositories) and the work on [Nouvion](https://github.com/merveilles/nouvion), a Slack bot for Merveilles.*
+*It was created with the help of [maxdeviant](https://github.com/maxdeviant?tab=repositories) and the work on [Nouvion](https://github.com/merveilles/nouvion)*
 
-*This README is written up as of April 19, 2015... it will most likely change.*
+*Wrriten up as of May 2, 2015*
 
 Named after the [Roman poet](http://en.wikipedia.org/wiki/Virgil)... Virgil is a Slack bot, created in Ruby, that you can incorporate into your Slack.
+
+<hr>
 
 ######<a href='#structure'>Structure</a>
 ######<a href='#started'>Getting Started</a>
@@ -22,15 +24,20 @@ Named after the [Roman poet](http://en.wikipedia.org/wiki/Virgil)... Virgil is a
 |-- Gemfile
 |-- Gemfile.lock
 |-- LICENSE
+|-- README.md
 |-- Rakefile
 |-- app.rb
 |-- lib
 |   |-- interpreter.rb
 |   |-- modules
-|       |-- forecast.rb
-|       |-- pathfind.rb
-|       |-- reference.rb
-|       |-- whois.rb
+|       |-- module.calc.rb
+|       |-- module.forecast.rb
+|       |-- module.help.rb
+|       |-- module.pathfind.rb
+|       |-- module.recite.rb
+|       |-- module.reference.rb
+|       |-- module.self.rb
+|       |-- module.whois.rb
 |   |-- slack.rb
 |   |-- virgil.rb
 |-- spec
@@ -38,23 +45,21 @@ Named after the [Roman poet](http://en.wikipedia.org/wiki/Virgil)... Virgil is a
 |       |-- slack_spec.rb
 |   |-- spec_helper.rb
 |   |-- virgil
-|-- views
-|   |-- index.erb
 
-6 directories, 16 files
+4 directories, 19 files
 ```
 
 Virgil is actually pretty simple. He runs out of `app.rb` at the root level. `interpreter.rb` is effectively your controller. It parses the message and acts accordingly, telling Virgil how to respond. `slack.rb` is what is doing the leg work in connecting to Slack's API.
 
-Under `lib` in the `modules` folder is where things are broken out (e.g. `forecast.rb` is relevant to forecasting weather).
+Under `lib` in the `modules` folder is where things are broken out (e.g. `module.forecast.rb` is relevant to forecasting weather, `module.calc.rb` pertains to mathematical calculations and so on).
 
-See *Adding on / contributing* for ore on this.
+See *Adding on / contributing* for more on this.
 
 **<a name='started'>Getting Started</a>**
 
 For now, to get Virgil up and running locally, you're going to need a few things.
 
-* Ensure that Ruby 2.2.1 is installed.
+* Ensure that Ruby 2.2.1 is installed, this repo runs that locally.
 * You need to set up the bot user on *[your Slack](https://my.slack.com/services/new/bot)*. Obviously, name your bot **virgil**. Yes, it MUST be virgil.
 <img src='http://i.imgur.com/OquylQM.png' />
 * You'll now see virgil as a team member on [your team directory](https://my.slack.com/team).
@@ -67,6 +72,7 @@ For now, to get Virgil up and running locally, you're going to need a few things
 # in here, you'll need
 SLACK_TOKEN="xxxx-0123456789-someOTHERnumbers&letters"
 ```
+* `bundle`
 * You should be able to then run `ruby app.rb` and a [Thin server](http://code.macournoyer.com/thin/) will start.
 * Head over to `http://localhost:4567/` and you'll notice your terminal will start displaying the messages as they occur. Virgil should say that he's awake in whatever channel as listed as your `is_general` channel. If you do not have one, he may not work (never tested it). You can change this by [going into his code](https://github.com/johnakers/virgil/blob/master/lib/virgil.rb#L21-L32) and altering his `awake` and `sleep` messages, hide them, or alter the channel ids.
 * in your `#general` channel, type `virgil` and he should respond
@@ -88,12 +94,16 @@ And you should be good to go.
 
 Hypothetically, you have Virgil up and running on your own. Now, you're wondering how to add on to him or, make him something else to work on your own.
 
-First, figure out what term and what text you expect. For instance `virgil [method] [relevant text]` is the format for pretty much everything.
+First, figure out what term(s) and what text you expect. For instance `virgil [method] [relevant text]` is the format for pretty much everything.
 
 Once you have a method, add that method to the case statement in `interpreter.rb` under `lib`. The `[relevant text]` is `text[1..-1].join(' ')`. Looking at the other cases is a good idea for reference. As noted in the comments above the case statement, keep your code here concise, with most of the work going on in your module.
 
 Create another file under `modules` with the relevant name (e.g. `forecast.rb` is for forecasting the weather). Add the correct `require_relative` in `references.rb` under `modules` as well.
 
 Test it out... prove it works... and you're good to go. If you really want to commit to this, a pull request will suffice.
+
+**<a name='deployment'>Deployment</a>**
+
+At time of writing this, I do not have virgil deployed anywhere. [`einhorn`](https://github.com/stripe/einhorn), recommneded by *maxdeviant* paired with deploying via [Linode](https://www.linode.com/) (or another 99.9% up service) seems to be the way to go. If you ping virgil multiple times while its running, you can potentially create multiple instances. einhorn allows you to push code while live and Linode has a good reputation for staying up and a relatively cheap cost. [Heroku](https://www.heroku.com/) apps, while popular for deploying with Ruby, go to sleep and using something like [kaffeine](http://kaffeine.herokuapp.com/), could have negative effects as mentioned before.
 
 >Fortune favors the bold
