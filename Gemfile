@@ -7,6 +7,7 @@ group :development, :test do
   gem 'awesome_print'
 end
 
+gem 'einhorn'
 gem 'sinatra'
 gem 'thin'
 gem 'faye-websocket'
