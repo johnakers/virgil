@@ -14,7 +14,7 @@ Named after the [Roman poet](http://en.wikipedia.org/wiki/Virgil)... Virgil is a
 ######<a href='#started'>Getting Started</a>
 ######<a href='#forecast'>ForecastIO</a>
 ######<a href='#contributing'>Adding on / contributing</a>
-######<a href='#deployment'>Deployment</a>
+######<a href='#deploy'>Deployment</a>
 
 <hr>
 
@@ -103,7 +103,7 @@ Create another file under `modules` with the relevant name (e.g. `forecast.rb` i
 
 Test it out... prove it works... and you're good to go. If you really want to commit to this, a pull request will suffice.
 
-**<a name='deployment'>Deployment</a>**
+**<a name='deploy'>Deployment</a>**
 
 At time of writing this, I do not have virgil deployed anywhere. [`einhorn`](https://github.com/stripe/einhorn), recommneded by *maxdeviant* paired with deploying via [Linode](https://www.linode.com/) (or another 99.9% up service) seems to be the way to go. If you ping virgil multiple times while its running, you can potentially create multiple instances. einhorn allows you to push code while live and Linode has a good reputation for staying up and a relatively cheap cost. [Heroku](https://www.heroku.com/) apps, while popular for deploying with Ruby, go to sleep and using something like [kaffeine](http://kaffeine.herokuapp.com/), could have negative effects as mentioned before.
 
