@@ -14,6 +14,7 @@ Named after the [Roman poet](http://en.wikipedia.org/wiki/Virgil)... Virgil is a
 ######<a href='#started'>Getting Started</a>
 ######<a href='#forecast'>ForecastIO</a>
 ######<a href='#contributing'>Adding on / contributing</a>
+######<a href='#deployment'>Deployment</a>
 
 <hr>
 
