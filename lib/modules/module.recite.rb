@@ -36,7 +36,7 @@ module Recite
       "_the dewy night unrolls a heaven thickly jewelled with sparkling stars_",
       "_The best days are the first to flee_",
       "_Yield not to evils, but attack all the more boldly_",
-      "_Ah, merciless Love, is there any length to which you cannot foree the human heart to go?_",
+      "_Ah, merciless Love, is there any length to which you cannot foree the human heart to go?_"
     ]
   end
 
