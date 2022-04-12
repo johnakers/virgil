@@ -8,6 +8,10 @@
 
 Named after the [Roman poet](http://en.wikipedia.org/wiki/Virgil)... Virgil is a Slack bot, created in Ruby, that you can incorporate into your Slack.
 
+*2022 note*
+
+# THIS IS DEPRECATED. THERE ARE BETTER WAYS TO DO SLACK BOTS. THIS WAS LIKE ONE OF THE FIRST THINGS I EVER DID, AND IS KEPT FOR NOSTALGIA ONLY
+
 <hr>
 
 ######<a href='#structure'>Structure</a>
